@@ -1,24 +1,27 @@
-import logo from './logo.svg';
-import './App.css';
+import Card from "./components/Card";
+import GlobalStyle from "./components/styles/Global.styles";
+import React from "react";
+import { themes } from './components/Theme'
+import { ThemeProvider } from "styled-components";
+import {themeContext} from './components/context/ThemeContext'
 
 function App() {
+
+  const [theme, setTheme] = React.useState('dark');
+
+  const changeTheme = () => {
+    theme === 'dark' ? setTheme('light') : setTheme('dark');
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <ThemeProvider theme={themes[theme]}>
+        <GlobalStyle />
+        <themeContext.Provider value={{ changeTheme }} >
+          <Card />
+        </themeContext.Provider>
+      </ThemeProvider>
+    </>
   );
 }
 

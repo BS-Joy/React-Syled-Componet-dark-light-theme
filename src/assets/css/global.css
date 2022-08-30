@@ -1,0 +1,92 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;700;900&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --background: #18191A;
+    --halka: #272A2E;
+    --singnature: #66BD6D;
+    --second-signature: #6CC1FA;
+    --third: #CCCCCC;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--halka);
+} */
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* .container::after {
+    content: 'Switch To Light';
+    background-color: transparent;
+    color: var(--second-signature);
+    width: auto;
+    padding: 6px 15px;
+    cursor: pointer;
+    position: relative;
+    bottom: 200px;
+    right: 163px;
+    border: 2px solid var(--second-signature);
+    border-radius: 5px;
+} */
+
+.card{
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    align-items: center;
+    background-color: var(--background);
+    width: 50vw;
+    /* border: 2px solid var(--signature); */
+    border-radius: 10px;
+    padding: 3rem;
+    box-shadow: 5px 5px 50px -6px rgba(102,189,109,0.94);
+}
+
+.title {
+    margin-bottom: 2rem;
+    font-size: 40px;
+    font-weight: 900;
+    color: var(--singnature);
+}
+
+.desc {
+    font-size: 22px;
+    margin-bottom: 2rem;
+    color: var(--third);
+}
+
+.texts button {
+    background-color: transparent;
+    color: var(--singnature);
+    font-weight: 700;
+    border: 2px solid var(--singnature);
+    border-radius: 5px;
+    padding: 15px;
+    cursor: pointer;
+    transition: ease 0.8s;
+}
+
+.texts button:hover {
+    background-color: var(--singnature);
+    color: var(--background);
+}
+
+.images {
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    width: 100%;
+}
